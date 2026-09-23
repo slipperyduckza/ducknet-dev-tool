@@ -1,0 +1,19 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.ducknetdevtool",
+        "Name": "DuckNet Dev Tool",
+        "Description": "Development environment helpers including local HTTPS CA & certificates",
+        "Version": "0.1.0",
+        "Authors": [
+            {
+                "Name": "DuckNet Contributors",
+                "Email": "dev@ducknet.test"
+            }
+        ],
+        "Category": "Development",
+        "License": "GPL-3.0-only",
+        "Icon": "org.kde.ducknetdevtool",
+        "Website": "https://github.com/ducknet/ducknet-dev-tool",
+        "Dependencies": []
+    }
+}

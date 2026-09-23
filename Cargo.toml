@@ -1,0 +1,43 @@
+[package]
+name = "ducknet-dev-tool"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "KDE dev environment setup tool - DEV HTTPS Certs"
+authors = ["ducknet-dev-tool contributors"]
+keywords = ["kde", "plasma", "qml", "cxx-qt", "certificates"]
+categories = ["development-tools"]
+default-run = "ducknet-dev-tool"
+
+[dependencies]
+cxx = "1.0"
+cxx-qt = "0.10"
+cxx-qt-lib = { version = "0.10", features = ["qt_full"] }
+cxx-qt-build = { version = "0.10", features = ["link_qt_object_files"] }
+base64 = "0.22"
+chrono = "0.4.45"
+sysinfo = "0.39.6"
+
+# Live nginx site-config lint in the Edit dialog. Parser only (rowan CST +
+# error recovery); semantic checks are our own in src/nginxlint.rs.
+# Upstream: https://github.com/walf443/nginx-lint (MIT).
+# Vendored under third-party/ so the reference clone can be deleted freely
+# and the AppImage build stays hermetic (no cli/wasmtime stack, no fetch).
+nginx-lint-parser = { path = "third-party/nginx-lint-parser" }
+
+# KDE integration - requires KF6 dev packages and internet access to fetch
+# NOTE: As of 2026-08-31, upstream cxx-kde-frameworks main branch requires cxx-qt 0.8
+# and conflicts with cxx-qt 0.10 specified in this plan (links = "cxx-qt" conflict).
+# Verification task #2 in plan FAILED: cxx-kde-frameworks incompatible with cxx-qt 0.10.
+# For first attempt this is commented out; src/main.rs provides pure-Qt fallback.
+# To re-enable when upstream supports 0.10, uncomment:
+# cxx-kde-frameworks = { git = "https://invent.kde.org/libraries/cxx-kde-frameworks.git" }
+# [features]
+# kde = ["cxx-kde-frameworks"]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[build-dependencies]
+cxx-qt-build = { version = "0.10", features = ["link_qt_object_files"] }
+cxx-build = "1.0"

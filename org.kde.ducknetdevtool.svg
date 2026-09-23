@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <title>DuckNet Dev Tool</title>
+  <!-- Background: rounded square KDE-ish -->
+  <rect x="2" y="2" width="60" height="60" rx="12" fill="#1d99f3" />
+  <!-- Duck silhouette simplified + cert badge -->
+  <g fill="white">
+    <!-- duck body -->
+    <ellipse cx="28" cy="38" rx="16" ry="12" opacity="0.95"/>
+    <!-- head -->
+    <circle cx="42" cy="24" r="10" />
+    <!-- beak -->
+    <path d="M50 24 L60 26 L50 30 Z" fill="#ffcc00"/>
+    <!-- eye -->
+    <circle cx="45" cy="22" r="2" fill="#1d99f3"/>
+    <!-- shield/cert overlay bottom-right -->
+    <g transform="translate(38,38)">
+      <path d="M12 2 L20 7 L20 14 C20 18 12 22 12 22 C12 22 4 18 4 14 L4 7 Z" fill="white" stroke="#1d99f3" stroke-width="1.2"/>
+      <path d="M8 12 L11 15 L16 9" fill="none" stroke="#1d99f3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+</svg>

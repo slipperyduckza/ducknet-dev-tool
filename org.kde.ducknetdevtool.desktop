@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=DuckNet Dev Tool
+Comment=Development environment setup - DEV HTTPS Certs and more
+Exec=ducknet-dev-tool
+Icon=org.kde.ducknetdevtool
+Type=Application
+Categories=Development;Qt;KDE;
+Keywords=development;certificates;https;ca;ssl;
+StartupNotify=true
+Terminal=false
+X-KDE-DBus-Restricted-Interfaces=org.kde.kapp,org.kde.KAboutData

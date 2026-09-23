@@ -1,0 +1,36 @@
+# Rust
+/target/
+# Keep Cargo.lock for binaries (committed intentionally)
+
+# Build outputs
+/repo/
+.build/
+*.AppImage
+*.flatpak
+.flatpak-builder/
+appimage-build/
+build-appimage.log
+
+# Downloaded AppImage tooling (re-downloaded by build-appimage.sh)
+/.appimage-tools/
+
+# Qt / CMake
+build/
+cmake-build-*/
+*.o
+*.so
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+
+# Env / secrets
+.env
+*.key
+*.pem

@@ -1,0 +1,38 @@
+[package]
+name = "nginx-lint-parser"
+version = "0.20.0"
+edition = "2024"
+description = "nginx configuration file parser"
+license = "MIT"
+repository = "https://github.com/walf443/nginx-lint"
+authors = ["walf443"]
+
+# Anchored so these match only at the crate root: unanchored gitignore-style
+# patterns match at any depth, and setting `include` also stops cargo from
+# filtering by .gitignore — together those shipped a stale wasm-pack pkg/.
+# tests/ is listed to keep `cargo test` working from the packaged crate.
+include = ["/src/**", "/tests/**", "/wit/*.wit", "/Cargo.toml", "/README.md"]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = []
+# Builds this crate as a WASM component exporting the `parser` world. The
+# WIT it generates from is vendored into wit/ and shipped in the package
+# (see `include` above), so this works from crates.io as well as in a
+# checkout — keep the copy in sync with the repository root's via
+# `make copy-wit`.
+wasm = ["dep:wit-bindgen"]
+# Adds a core-module JSON entry point beside the component's exports, for
+# hosts with no component-model runtime. The Go SDK's test helper runs this
+# build under wazero so a plugin's tests can use the real parser; nothing
+# else does, and `wasm` alone still produces the component.
+wasm-json = ["wasm", "dep:serde_json"]
+
+[dependencies]
+rowan = "0.17"
+serde = { version = "1", features = ["derive"] }
+thiserror = "2"
+wit-bindgen = { version = "0.61.0", optional = true }
+serde_json = { version = "1", optional = true }

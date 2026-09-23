@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="console-application">
+  <id>org.kde.ducknetdevtool</id>
+  <name>DuckNet Dev Tool</name>
+  <summary>Development environment setup - DEV HTTPS Certs</summary>
+  <description>
+    <p>
+      DuckNet Dev Tool helps set up common development environment functions.
+      The first function, DEV HTTPS Certs, automates the workflow from
+      https://deliciousbrains.com/ssl-certificate-authority-for-local-https-development/
+      to create a local certificate authority and generate domain certificates for HTTPS development.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Create an AES-256 encrypted local CA (~/certs/myCA.key / myCA.pem)</li>
+      <li>Install the CA to the system trust store via update-ca-certificates</li>
+      <li>Generate per-domain certificates with SAN and wildcard support</li>
+    </ul>
+  </description>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>MIT</project_license>
+  <developer_name>DuckNet Contributors</developer_name>
+  <url type="homepage">https://github.com/ducknet/ducknet-dev-tool</url>
+  <launchable type="desktop-id">org.kde.ducknetdevtool.desktop</launchable>
+  <provides>
+    <binary>ducknet-dev-tool</binary>
+  </provides>
+  <requires>
+    <display_length compare="ge">768</display_length>
+  </requires>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+  <categories>
+    <category>Development</category>
+  </categories>
+  <releases>
+    <release version="0.1.0" date="2026-08-31">
+      <description>
+        <p>First attempt - DEV HTTPS Certs: CA setup, install, and domain cert generation.</p>
+      </description>
+    </release>
+  </releases>
+</component>
