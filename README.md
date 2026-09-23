@@ -2,6 +2,13 @@
 
 A native desktop app for **KDE Plasma** on **Debian** and **Fedora** that turns a fresh install into a ready-to-use local web-development machine — HTTPS certs, NGINX + PHP, databases, and dev tooling, all from one friendly GUI.
 
+<h1>
+<a href="https://github.com/slipperyduckza/ducknet-dev-tool/releases/download/v0.1.0/DuckNet-Dev-Tool-0.1.0-x86_64.AppImage">
+  <img src="https://develop.kde.org/themeicons/breeze/mimetypes/64/application-vnd.appimage.svg" width="32" style="vertical-align: middle; margin-right: 6px;" alt="icon">Download DuckNet Dev Tool
+</a>
+</h1>
+<h4>
+
 Built with **Rust + Qt6/QML + Kirigami**. Current version **0.1.0**, licensed **MIT**.
 
 ## What it does
